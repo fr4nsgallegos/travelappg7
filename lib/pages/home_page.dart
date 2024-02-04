@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelappg7/widgets/card2_widget.dart';
 import 'package:travelappg7/widgets/card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,25 +84,11 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Container(
-                height: 100,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Colors.cyan.withOpacity(0.45),
-                    borderRadius: BorderRadius.circular(20.0)),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Row(
-                    children: [
-                      Image.network(
-                        "https://images.pexels.com/photos/8520903/pexels-photo-8520903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                        width: MediaQuery.of(context).size.width / 4,
-                        fit: BoxFit.cover,
-                      )
-                    ],
-                  ),
-                ),
-              )
+              Card2Widget(),
+              Card2Widget(),
+              Card2Widget(),
+              Card2Widget(),
+              Card2Widget(),
             ],
           ),
         ),
