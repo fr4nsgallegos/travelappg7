@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
+            padding: EdgeInsets.all(14),
             width: 160,
             height: 220,
             decoration: BoxDecoration(
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.40),
+                        color: Colors.white.withOpacity(0.35),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Text(
@@ -49,28 +50,89 @@ class HomePage extends StatelessWidget {
                       width: 16,
                     ),
                     Stack(
+                      clipBehavior: Clip.none,
                       children: [
-                        CircleAvatar(
-                          radius: 14,
-                          backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                        Positioned(
+                          left: 40,
+                          child: CircleAvatar(
+                            radius: 16,
+                            backgroundImage: NetworkImage(
+                                "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          ),
+                        ),
+                        Positioned(
+                          left: 20,
+                          child: CircleAvatar(
+                            radius: 16,
+                            backgroundImage: NetworkImage(
+                                "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          ),
+                        ),
+                        Positioned(
+                          left: 20,
+                          child: CircleAvatar(
+                            radius: 16,
+                            backgroundImage: NetworkImage(
+                                "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          ),
                         ),
                         CircleAvatar(
-                          radius: 14,
+                          radius: 16,
                           backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                              "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
                         ),
-                        CircleAvatar(
-                          radius: 14,
-                          backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                        )
                       ],
                     ),
                   ],
                 ),
                 Row(
-                  children: [],
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Thailand",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "18 tours",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        )
+                      ],
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 14, horizontal: 4),
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.35),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          Text(
+                            "4.5",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),
