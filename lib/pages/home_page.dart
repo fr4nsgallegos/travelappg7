@@ -90,11 +90,20 @@ class HomePage extends StatelessWidget {
               Card2Widget(),
               Card2Widget(),
               Container(
-                // height: 200,
+                margin: EdgeInsets.only(
+                  bottom: 24,
+                  right: 16,
+                ),
                 width: 250,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        offset: Offset(0, 2),
+                        blurRadius: 5),
+                  ],
                 ),
                 child: Column(
                   children: [
@@ -156,6 +165,7 @@ class HomePage extends StatelessWidget {
                             height: 6,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
