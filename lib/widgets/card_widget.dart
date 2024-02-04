@@ -4,6 +4,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: 10),
       padding: EdgeInsets.all(14),
       width: 160,
       height: 220,
