@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
-          color: Colors.cyan,
+          color: Colors.black,
         ),
         elevation: 0,
         centerTitle: true,
@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           children: [
             Icon(
               Icons.rocket,
+              color: Colors.cyan,
             ),
             SizedBox(
               width: 8,
@@ -32,8 +33,43 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [CardWidget()],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Find the best tour",
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Text(
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus tincidunt libero, quis rhoncus leo tempor",
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Country",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            CardWidget()
+          ],
+        ),
       ),
     );
   }
