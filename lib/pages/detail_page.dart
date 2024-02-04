@@ -5,7 +5,7 @@ class TravelPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        clipBehavior: Clip.none,
+        // clipBehavior: Clip.none,
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
@@ -18,25 +18,47 @@ class TravelPage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 200,
-            height: MediaQuery.of(context).size.height,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(50),
-                  topLeft: Radius.circular(50),
+          Column(
+            children: [
+              SizedBox(
+                height: 200,
+              ),
+              Expanded(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(50),
+                      topLeft: Radius.circular(50),
+                    ),
+                  ),
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 200,
+                          width: 20,
+                          color: Colors.red,
+                        ),
+                        Container(
+                          height: 20,
+                          width: 20,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 500,
+                          width: 20,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [],
-                ),
-              ),
-            ),
+            ],
           ),
         ],
       ),
