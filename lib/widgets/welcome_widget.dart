@@ -15,36 +15,41 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height - 100,
-      width: MediaQuery.of(context).size.width - 40,
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(25), color: color),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            pathAsset,
-            height: MediaQuery.of(context).size.height / 4,
-          ),
-          SizedBox(height: 40),
-          Text(
-            title,
-            style: TextStyle(
-                fontSize: 35, color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Text(
-              description,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 2),
+      child: Container(
+        height: MediaQuery.of(context).size.height - 100,
+        width: MediaQuery.of(context).size.width - 40,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25), color: color),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              pathAsset,
+              height: MediaQuery.of(context).size.height / 4,
+            ),
+            SizedBox(height: 40),
+            Text(
+              title,
               style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
+                  fontSize: 30,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                description,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
