@@ -3,10 +3,24 @@ import 'package:travelappg7/widgets/card2_widget.dart';
 import 'package:travelappg7/widgets/card3_widget.dart';
 import 'package:travelappg7/widgets/card_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int contador = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          contador += 1;
+          setState(() {});
+        },
+        child: Icon(Icons.add),
+      ),
       drawer: Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -41,6 +55,12 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: Text(
+                  contador.toString(),
+                  style: TextStyle(fontSize: 35),
+                ),
+              ),
               Text(
                 "Find the best tour",
                 style: TextStyle(
