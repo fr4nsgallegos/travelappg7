@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelappg7/widgets/card2_widget.dart';
 import 'package:travelappg7/widgets/card3_widget.dart';
 import 'package:travelappg7/widgets/card_widget.dart';
@@ -11,12 +12,31 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int contador = 0;
 
+  Future<void> _saveContador() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    _prefs.setInt('counter', contador);
+  }
+
+  Future<void> _getContador() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    contador = _prefs.getInt('counter') ?? 0;
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    _getContador();
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           contador += 1;
+          _saveContador();
           setState(() {});
         },
         child: Icon(Icons.add),
