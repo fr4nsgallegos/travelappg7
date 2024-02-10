@@ -8,6 +8,8 @@ class InitPage extends StatefulWidget {
   State<InitPage> createState() => _InitPageState();
 }
 
+//USANDO CAROUSEL SLIDER
+
 class _InitPageState extends State<InitPage> {
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,8 @@ class _InitPageState extends State<InitPage> {
   }
 }
 
+
+// USANDO GFCAROUSEL DE GETWIDGET
 // class InitPage extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
