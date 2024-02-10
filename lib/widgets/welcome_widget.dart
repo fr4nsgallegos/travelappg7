@@ -16,7 +16,7 @@ class WelcomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 2),
+      padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 10),
       child: Container(
         height: MediaQuery.of(context).size.height - 100,
         width: MediaQuery.of(context).size.width - 40,
