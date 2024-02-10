@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelappg7/widgets/card2_widget.dart';
@@ -21,6 +23,12 @@ class _HomePageState extends State<HomePage> {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     contador = _prefs.getInt('counter') ?? 0;
     setState(() {});
+  }
+
+  Future<void> setCerrarApp() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    _prefs.setBool("yaInicio", false);
+    print(_prefs.get("yaInicio"));
   }
 
   @override
@@ -79,6 +87,21 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   contador.toString(),
                   style: TextStyle(fontSize: 35),
+                ),
+              ),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await setCerrarApp();
+                      exit(0);
+                      // setCerrarApp().then((value) {
+                      //   exit(0);
+                      // });
+                    },
+                    child: Text("CERRAR APP"),
+                  ),
                 ),
               ),
               Text(
