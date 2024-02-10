@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travelappg7/pages/detail_page.dart';
 import 'package:travelappg7/pages/home_page.dart';
 import 'package:travelappg7/pages/init_page.dart';
+import 'package:travelappg7/pages/welcome_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

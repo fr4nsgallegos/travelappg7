@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travelappg7/pages/home_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
   String description;
   Color color;
   String pathAsset;
+  bool showButton;
 
   WelcomeWidget({
     required this.title,
     required this.description,
     required this.color,
     required this.pathAsset,
+    required this.showButton,
   });
+
+  Future<void> setYaInicio() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    _prefs.setBool("yaInicio", true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +36,9 @@ class WelcomeWidget extends StatelessWidget {
           children: [
             Image.asset(
               pathAsset,
-              height: MediaQuery.of(context).size.height / 4,
+              height: MediaQuery.of(context).size.height / 5,
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Text(
               title,
               style: TextStyle(
@@ -48,6 +57,23 @@ class WelcomeWidget extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 24,
+            ),
+            showButton
+                ? ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => HomePage(),
+                        ),
+                      );
+                      setYaInicio();
+                    },
+                    child: Text("Vamos!!!"),
+                  )
+                : Container(),
           ],
         ),
       ),
